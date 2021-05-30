@@ -1,8 +1,8 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Nav } from '../components/Nav';
+import Link from 'next/link';
 
-export default function Home() {
+export default function Quiz() {
     return (
         <div>
             <Head>
@@ -13,11 +13,10 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Nav></Nav>
 
             <main className="container h-screen mx-auto flex">
                 <h1 className="text-center m-auto text-2xl font-bold">
-                    Welcome to LMS Platform
+                    Welcome to Quiz
                 </h1>
             </main>
         </div>
