@@ -18,11 +18,8 @@ export default function Home() {
             <div className="col-span-2 h-full mx-2 my-2 bg-gray-700 rounded-md">
               Placeholder Sidenav
             </div>
-            <div className="col-span-8 h-full my-2 bg-gray-700 flex items-center rounded-md">
+            <div className="col-span-10 h-full my-2 mr-2 bg-gray-700 flex items-center rounded-md">
               <h1 className="mx-auto text-6xl font-bold">Main Content</h1>
-            </div>
-            <div className="col-span-2 h-full mx-2 my-2 bg-gray-700 rounded-md">
-              Content Placeholder
             </div>
           </div>
         </div>
