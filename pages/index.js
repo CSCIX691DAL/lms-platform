@@ -13,16 +13,26 @@ export default function Home() {
       <Nav />
 
       <main>
-        <div className="h-screen">
-          <div className="max-w-full h-full pb-4 mx-auto grid grid-cols-12 bg-blue-900">
-            <div className="col-span-2 h-full mx-2 my-2 bg-gray-700 rounded-md">
-              Placeholder Sidenav
+        <section className="mainLayout h-screen">
+          <div className="max-w-full h-full pb-4 mx-auto grid grid-cols-12 bg-navy-blue">
+            <div className="col-span-1 h-full bg-navy-blue border-t border-b border-white">
+              Empty Col
             </div>
-            <div className="col-span-10 h-full my-2 mr-2 bg-gray-700 flex items-center rounded-md">
-              <h1 className="mx-auto text-6xl font-bold">Main Content</h1>
+            <div className="col-span-2 h-full bg-dark-navy-blue border border-white text-white flex items-center">
+              <h1 className="mx-auto text-2xl font-bold text-white">
+                Content Nav
+              </h1>
+            </div>
+            <div className="col-span-8 h-full bg-dark-navy-blue border-t border-r border-b border-white flex items-center">
+              <h1 className="mx-auto text-6xl font-bold text-white">
+                Main Content
+              </h1>
+            </div>
+            <div className="col-span-1 h-full bg-navy-blue border-t border-b border-white">
+              Empty Col
             </div>
           </div>
-        </div>
+        </section>
       </main>
     </div>
   );
