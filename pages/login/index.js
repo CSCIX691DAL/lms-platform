@@ -1,9 +1,9 @@
 export default function Login() {
   return (
     <div className="bg-dark-navy-blue h-screen flex">
-      <div className="bg-navy-blue lg:w-4/12 md:6/12 w-10/12 m-auto shadow-md">
+      <div className="bg-navy-blue lg:w-4/12 md:6/12 w-10/12 m-auto shadow-md rounded-xl">
         <div className="py-8 px-8 rounded-xl">
-          <h1 className="font-medium font-bold text-3xl mt-3 text-center text-white">
+          <h1 className="font-bold text-3xl mt-3 text-center text-white">
             LMS Platform
           </h1>
           <h1 className="font-medium text-2xl mt-3 text-center text-white">
