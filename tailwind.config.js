@@ -7,6 +7,13 @@ module.exports = {
         "navy-blue": "#091725",
         "dark-navy-blue": "#000A14",
       },
+      maxHeight: {
+        0: "0",
+        "1/4": "25%",
+        "1/2": "50%",
+        "3/4": "75%",
+        full: "100%",
+      },
     },
   },
   variants: {
