@@ -16,7 +16,7 @@ export const Nav = () => {
 
     return (
         <>
-            <nav className="flex items-center flex-wrap bg-gray-100 p-3 ">
+            <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
                 <Link href="/">
                     <a className="hidden lg:block items-center p-2 mr-4 ">
                         <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
@@ -28,7 +28,7 @@ export const Nav = () => {
                     </a>
                 </Link>
                 <button
-                    className=" p-3 hover:bg-purple-500 rounded lg:hidden text-white  hover:text-white outline-none"
+                    className=" inline-flex p-3 hover:bg-purple-500 rounded lg:hidden text-white  hover:text-white outline-none"
                     onClick={handleClick}
                 >
                     <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
@@ -57,7 +57,7 @@ export const Nav = () => {
                         </Link>
                         <Link href="/quiz">
                             <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50  hover:text-white">
-                                Quiz
+                                Quizzes
                             </a>
                         </Link>
                         <Link href="/">
