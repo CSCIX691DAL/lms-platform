@@ -21,9 +21,7 @@ export default function Home() {
                     <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12 bg-gray-200">
                         <div className="col-span-2 h-full bg-gray-100 border-l border-r border-b border-gray-400 text-black">
                             <div className="courseNav container h-1/2">
-                                <h1 className="mx-auto text-2xl font-bold text-black">
-                                    Courses Nav
-                                </h1>
+                                <Sidebar></Sidebar>
                             </div>
                             <div className="workNav container border-t border-gray-400 h-1/2">
                                 <h1 className="mx-auto text-2xl font-bold text-black">

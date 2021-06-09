@@ -1,14 +1,11 @@
-import { Menu, Switch } from 'antd';
+import { Menu, Button } from 'antd';
 import { useState } from 'react';
-import {} from '@ant-design/icons';
+import React from 'react';
+
+import { BookOutlined } from '@ant-design/icons';
 
 export const Sidebar = () => {
-    const [clicked, setClicked] = useState(1);
-    const [theme, setTheme] = useState('light');
-
-    const changeTheme = (value) => {
-        value === 'light' ? setTheme('dark') : setTheme('light');
-    };
+    const [clicked, setClicked] = useState('1');
 
     const handleClick = (e) => {
         console.log('click ', e);
@@ -17,25 +14,19 @@ export const Sidebar = () => {
 
     return (
         <>
-            <Menu
-                theme={theme}
-                onClick={handleClick}
-                style={{ width: 256 }}
-                selectedKeys={clicked}
-                mode="inline"
-            >
-                <Menu>
-                    <Switch
-                        checked={theme === 'light'}
-                        onChange={() => changeTheme(theme)}
-                        unCheckedChildren="Dark"
-                        checkedChildren="Light"
-                    />
-                </Menu>
-                <Menu.Item key="1">Option 1</Menu.Item>
-                <Menu.Item key="2">Option 2</Menu.Item>
-                <Menu.Item key="3">Option 3</Menu.Item>
-                <Menu.Item key="4">Option 4</Menu.Item>
+            <Menu onClick={handleClick} selectedKeys={clicked} mode="inline">
+                <Menu.Item key="1" icon={<BookOutlined />}>
+                    Course 1
+                </Menu.Item>
+                <Menu.Item key="2" icon={<BookOutlined />}>
+                    Course 2
+                </Menu.Item>
+                <Menu.Item key="3" icon={<BookOutlined />}>
+                    Course 3
+                </Menu.Item>
+                <Menu.Item key="4" icon={<BookOutlined />}>
+                    Course 4
+                </Menu.Item>
             </Menu>
         </>
     );

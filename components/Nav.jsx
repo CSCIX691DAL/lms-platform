@@ -39,6 +39,9 @@ export const Nav = () => {
                     </span>
                 </button>
                 {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+                <div className="lg:hidden ml-auto">
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                </div>
                 <div
                     className={`${
                         active ? '' : 'hidden'
@@ -67,7 +70,7 @@ export const Nav = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="ml-auto">
+                <div className="hidden lg:block ml-auto">
                     <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </div>
             </nav>
