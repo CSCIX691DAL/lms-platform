@@ -17,9 +17,10 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@iconify/icons-bx": "^1.1.0",
+    "@iconify/react": "^1.1.4",
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.0",
     "tailwindcss": "^2.1.2"
   }
 }
-

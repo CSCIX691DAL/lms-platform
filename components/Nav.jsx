@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { Avatar, Image } from 'antd';
+import { Icon, InlineIcon } from '@iconify/react';
+import bxNotification from '@iconify/icons-bx/bx-notification';
 
 // This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = () => {
@@ -40,6 +42,10 @@ export const Nav = () => {
                 </button>
                 {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
                 <div className="lg:hidden ml-auto">
+                    <Icon
+                        icon={bxNotification}
+                        style={{ color: '#0f172a', fontSize: '30px' }}
+                    />
                     <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </div>
                 <div
@@ -70,8 +76,15 @@ export const Nav = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="hidden lg:block ml-auto">
-                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                <div className="hidden lg:block ml-auto flex items-center justify-center">
+                    <Icon
+                        className="mx-8 inline-block"
+                        icon={bxNotification}
+                        style={{ color: '#0f172a', fontSize: '30px' }}
+                    />
+                    <div className="mx-4 inline-block">
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                    </div>
                 </div>
             </nav>
         </>
