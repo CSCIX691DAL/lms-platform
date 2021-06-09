@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { Nav } from '../../components/Nav.jsx';
 export default function Quiz() {
     return (
         <div>
@@ -13,6 +13,7 @@ export default function Quiz() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
+            <Nav></Nav>
 
             <main className="container h-screen mx-auto flex">
                 <h1 className="text-center m-auto text-2xl font-bold">
