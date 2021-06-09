@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import { Nav } from '../components/Nav';
-
+import { Sidebar } from '../components/Sidebar';
 export default function Home() {
     return (
         <div>
@@ -16,6 +16,8 @@ export default function Home() {
             <Nav></Nav>
 
             <main className="container h-screen mx-auto flex">
+                <Sidebar></Sidebar>
+
                 <h1 className="text-center m-auto text-2xl font-bold">
                     Welcome to LMS Platform
                 </h1>

@@ -1,13 +1,15 @@
 import Link from 'next/link';
 import { useState } from 'react';
-import Avatar from '@material-ui/core/Avatar';
+import { Avatar, Image } from 'antd';
 
-// This is just a example Nav bar created from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
-// This component is only for demo purposes
-// we will modify the final content after the prototype is finished
+// This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = () => {
     const [active, setActive] = useState(false);
+    const [openNotification, setOpenNotification] = useState(null);
 
+    const handleCloseNotification = () => {
+        setOpenNotification(null);
+    };
     const handleClick = () => {
         setActive(!active);
     };
@@ -16,7 +18,7 @@ export const Nav = () => {
         <>
             <nav className="flex items-center flex-wrap bg-gray-100 p-3 ">
                 <Link href="/">
-                    <a className="inline-flex items-center p-2 mr-4 ">
+                    <a className="hidden lg:block items-center p-2 mr-4 ">
                         <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
                             LMS
                         </span>
@@ -26,7 +28,7 @@ export const Nav = () => {
                     </a>
                 </Link>
                 <button
-                    className=" inline-flex p-3 hover:bg-purple-500 rounded lg:hidden text-white ml-auto hover:text-white outline-none"
+                    className=" p-3 hover:bg-purple-500 rounded lg:hidden text-white  hover:text-white outline-none"
                     onClick={handleClick}
                 >
                     <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
@@ -44,13 +46,13 @@ export const Nav = () => {
                 >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white">
-                                Lectures
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white ">
+                                Home
                             </a>
                         </Link>
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white ">
-                                Home
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white">
+                                Lectures
                             </a>
                         </Link>
                         <Link href="/quiz">
@@ -63,8 +65,10 @@ export const Nav = () => {
                                 Assignment
                             </a>
                         </Link>
-                        <Avatar>O</Avatar>
                     </div>
+                </div>
+                <div className="ml-auto">
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                 </div>
             </nav>
         </>
