@@ -1,53 +1,56 @@
 import Link from 'next/link';
 import { useState } from 'react';
+import { Avatar, Image } from 'antd';
+import { Icon, InlineIcon } from '@iconify/react';
+import bxNotification from '@iconify/icons-bx/bx-notification';
 
-// This is just a example Nav bar created from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
-// This component is only for demo purposes
-// we will modify the final content after the prototype is finished
+// This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = () => {
     const [active, setActive] = useState(false);
+    const [openNotification, setOpenNotification] = useState(null);
 
+    const handleCloseNotification = () => {
+        setOpenNotification(null);
+    };
     const handleClick = () => {
         setActive(!active);
     };
 
     return (
         <>
-            <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3">
+
+            <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
                 <Link href="/">
-                    <a className="inline-flex items-center p-2 mr-4 ">
-                        <svg
-                            viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="fill-current text-black h-8 w-8 mr-2"
-                        >
-                            <path d="M12.001 4.8c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624C13.666 10.618 15.027 12 18.001 12c3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C16.337 6.182 14.976 4.8 12.001 4.8zm-6 7.2c-3.2 0-5.2 1.6-6 4.8 1.2-1.6 2.6-2.2 4.2-1.8.913.228 1.565.89 2.288 1.624 1.177 1.194 2.538 2.576 5.512 2.576 3.2 0 5.2-1.6 6-4.8-1.2 1.6-2.6 2.2-4.2 1.8-.913-.228-1.565-.89-2.288-1.624C10.337 13.382 8.976 12 6.001 12z" />
-                        </svg>
-                        <span className="text-xl text-black font-bold uppercase tracking-wide">
-                            LMS Platform
+                    <a className="hidden lg:block items-center p-2 mr-4 ">
+                        <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
+                            LMS
+                        </span>
+                        <span className="text-xl text-black tracking-wide">
+                            Platform
                         </span>
                     </a>
                 </Link>
                 <button
-                    className=" inline-flex p-3 hover:bg-purple-500 rounded lg:hidden text-black ml-auto hover:text-white outline-none"
+
+                    className=" inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-white  hover:text-white outline-none"
+
                     onClick={handleClick}
                 >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 12h16M4 18h16"
-                        />
-                    </svg>
+                    <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
+                        LMS
+                    </span>
+                    <span className="text-xl text-black tracking-wide">
+                        Platform
+                    </span>
                 </button>
                 {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
+                <div className="lg:hidden ml-auto">
+                    <Icon
+                        icon={bxNotification}
+                        style={{ color: '#0f172a', fontSize: '30px' }}
+                    />
+                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                </div>
                 <div
                     className={`${
                         active ? '' : 'hidden'
@@ -55,21 +58,37 @@ export const Nav = () => {
                 >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-500 hover:text-black">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
+                                Home
+                            </a>
+                        </Link>
+                        <Link href="/">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white">
                                 Lectures
                             </a>
                         </Link>
                         <Link href="/quiz">
-                            <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-500 hover:text-black">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                                 Quizzes
                             </a>
                         </Link>
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-black font-bold items-center justify-center hover:bg-purple-500 hover:text-black">
-                                Assignments
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
+                                Assignment
+
                             </a>
                         </Link>
                         
+                    </div>
+                </div>
+                <div className="hidden lg:block ml-auto flex items-center justify-center">
+                    <Icon
+                        className="mx-8 inline-block"
+                        icon={bxNotification}
+                        style={{ color: '#0f172a', fontSize: '30px' }}
+                    />
+                    <div className="mx-4 inline-block">
+                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
                     </div>
                 </div>
             </nav>
