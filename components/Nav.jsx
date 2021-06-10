@@ -18,6 +18,7 @@ export const Nav = () => {
 
     return (
         <>
+
             <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
                 <Link href="/">
                     <a className="hidden lg:block items-center p-2 mr-4 ">
@@ -30,7 +31,9 @@ export const Nav = () => {
                     </a>
                 </Link>
                 <button
+
                     className=" inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-white  hover:text-white outline-none"
+
                     onClick={handleClick}
                 >
                     <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
@@ -72,8 +75,10 @@ export const Nav = () => {
                         <Link href="/">
                             <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                                 Assignment
+
                             </a>
                         </Link>
+                        
                     </div>
                 </div>
                 <div className="hidden lg:block ml-auto flex items-center justify-center">
