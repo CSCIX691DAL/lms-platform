@@ -30,7 +30,7 @@ export const Nav = () => {
                     </a>
                 </Link>
                 <button
-                    className=" inline-flex p-3 hover:bg-purple-500 rounded lg:hidden text-white  hover:text-white outline-none"
+                    className=" inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-white  hover:text-white outline-none"
                     onClick={handleClick}
                 >
                     <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
@@ -55,22 +55,22 @@ export const Nav = () => {
                 >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white ">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
                                 Home
                             </a>
                         </Link>
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-purple-500 hover:bg-opacity-50 hover:text-white">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white">
                                 Lectures
                             </a>
                         </Link>
                         <Link href="/quiz">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50  hover:text-white">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                                 Quizzes
                             </a>
                         </Link>
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-purple-500 hover:bg-opacity-50  hover:text-white">
+                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                                 Assignment
                             </a>
                         </Link>
