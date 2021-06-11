@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { Avatar, Image } from 'antd';
 import { Icon, InlineIcon } from '@iconify/react';
 import bxNotification from '@iconify/icons-bx/bx-notification';
+import firebase from "firebase/app";
+import Button from "@material-ui/core/Button";
+
 
 // This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = () => {
@@ -20,7 +23,7 @@ export const Nav = () => {
         <>
 
             <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
-                <Link href="/">
+                <Link href="/authenticated">
                     <a className="hidden lg:block items-center p-2 mr-4 ">
                         <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
                             LMS
@@ -58,7 +61,7 @@ export const Nav = () => {
                 >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href="/">
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
+                            <a className="text-md lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
                                 Home
                             </a>
                         </Link>
@@ -75,7 +78,6 @@ export const Nav = () => {
                         <Link href="/">
                             <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                                 Assignment
-
                             </a>
                         </Link>
                         
@@ -88,7 +90,16 @@ export const Nav = () => {
                         style={{ color: '#0f172a', fontSize: '30px' }}
                     />
                     <div className="mx-4 inline-block">
-                        <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                        <Button
+                            variant="container"
+                            onClick={async () => {
+                                await firebase.auth().signOut();
+                                window.location.href = "/";
+                            }}
+                        >
+                            Sign out
+                        </Button>
+                        {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
                     </div>
                 </div>
             </nav>
