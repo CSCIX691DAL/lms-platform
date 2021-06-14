@@ -1,12 +1,10 @@
 import "../styles/globals.css";
-import { AuthProvider } from "../auth";
+import initAuth from "../initAuth";
+
+initAuth();
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <AuthProvider>
-      <Component {...pageProps} />
-    </AuthProvider>
-  );
+  return <Component {...pageProps} />;
 }
 
 export default MyApp;

@@ -1,13 +1,15 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Nav } from "../components/Nav";
-import { Sidebar } from "../components/Sidebar";
-import Link from "next/link";
-import { useAuth } from "../auth";
 import Button from "@material-ui/core/Button";
+import Link from "next/link";
+import {
+  useAuthUser,
+  withAuthUser,
+  withAuthUserTokenSSR,
+} from "next-firebase-auth";
 
-export default function Home() {
-  const { user } = useAuth();
+function Home() {
+  const AuthUser = useAuthUser();
   return (
     <div className="bg-gray-200">
       <Head>
@@ -21,18 +23,27 @@ export default function Home() {
           <div className="m-auto text-center">
             <h1 className="font-bold text-4xl">Welcome to LMS Platform</h1>
             <p className="font-medium text-lg">
-              User ID: {user ? user.uid : "not currently signed in"}
+              User Email:{" "}
+              {AuthUser.email ? AuthUser.email : "Not currently signed in"}.
             </p>
             <div className="mt-5">
-              <Button variant="contained" color="primary" disabled={user}>
+              <Button
+                variant="contained"
+                color="primary"
+                disabled={AuthUser.email}
+              >
                 <Link href="/login">
                   <a>Login</a>
                 </Link>
               </Button>
             </div>
             <div className="mt-5">
-              <Button variant="contained" color="primary" disabled={!user}>
-                <Link href="/authenticated">
+              <Button
+                variant="contained"
+                color="primary"
+                disabled={!AuthUser.email}
+              >
+                <Link href="/auth">
                   <a>Proceed to LMS Platform</a>
                 </Link>
               </Button>
@@ -43,3 +54,7 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = withAuthUserTokenSSR()();
+
+export default withAuthUser()(Home);
