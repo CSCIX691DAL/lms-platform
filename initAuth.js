@@ -2,6 +2,7 @@ import { init } from "next-firebase-auth";
 
 const initAuth = () => {
   init({
+    debug: false,
     authPageURL: "/",
     appPageURL: "/auth",
     loginAPIEndpoint: "/api/login", // required
@@ -13,7 +14,9 @@ const initAuth = () => {
         projectId: process.env.FIREBASE_PROJECT_ID,
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
         // The private key must not be accesssible on the client side.
-        privateKey: process.env.FIREBASE_PRIVATE_KEY,
+        privateKey: process.env.FIREBASE_PRIVATE_KEY
+          ? process.env.FIREBASE_PRIVATE_KEY.replace(/\\n/gm, "\n")
+          : undefined,
       },
     },
     firebaseClientInitConfig: {
