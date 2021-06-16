@@ -57,7 +57,7 @@ export const Nav = ({ email, signOut }) => {
                 Home
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/home">
               <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white">
                 Lectures
               </a>
@@ -67,7 +67,7 @@ export const Nav = ({ email, signOut }) => {
                 Quizzes
               </a>
             </Link>
-            <Link href="/">
+            <Link href="/home">
               <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                 Assignment
               </a>
