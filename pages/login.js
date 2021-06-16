@@ -17,7 +17,7 @@ const styles = {
   },
 };
 
-const Auth = () => (
+const Login = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-md w-full space-y-8">
       <div>
@@ -32,4 +32,4 @@ export const getServerSideProps = withAuthUserTokenSSR({
   whenAuthed: AuthAction.REDIRECT_TO_APP,
 })();
 
-export default withAuthUser({ whenAuthed: AuthAction.REDIRECT_TO_APP })(Auth);
+export default withAuthUser({ whenAuthed: AuthAction.REDIRECT_TO_APP })(Login);

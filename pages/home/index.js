@@ -9,7 +9,7 @@ import {
   AuthAction,
 } from "next-firebase-auth";
 
-function Auth() {
+function Home() {
   const AuthUser = useAuthUser();
   return (
     <div className="bg-gray-200">
@@ -50,4 +50,4 @@ export const getServerSideProps = withAuthUserTokenSSR()();
 export default withAuthUser({
   whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
   authPageURL: "/",
-})(Auth);
+})(Home);

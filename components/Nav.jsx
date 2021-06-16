@@ -21,7 +21,7 @@ export const Nav = ({ email, signOut }) => {
   return (
     <>
       <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
-        <Link href="/auth">
+        <Link href="/home">
           <a className="hidden lg:block items-center p-2 mr-4 ">
             <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
               LMS
@@ -52,7 +52,7 @@ export const Nav = ({ email, signOut }) => {
           }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
         >
           <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
-            <Link href="/auth">
+            <Link href="/home">
               <a className="text-md lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
                 Home
               </a>
@@ -62,7 +62,7 @@ export const Nav = ({ email, signOut }) => {
                 Lectures
               </a>
             </Link>
-            <Link href="/auth/quiz">
+            <Link href="/home/quiz">
               <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
                 Quizzes
               </a>

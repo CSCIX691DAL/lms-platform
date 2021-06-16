@@ -4,7 +4,7 @@ const initAuth = () => {
   init({
     debug: false,
     authPageURL: "/",
-    appPageURL: "/auth",
+    appPageURL: "/home",
     loginAPIEndpoint: "/api/login", // required
     logoutAPIEndpoint: "/api/logout", // required
     // firebaseAuthEmulatorHost: "localhost:9099",

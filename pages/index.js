@@ -8,7 +8,7 @@ import {
   withAuthUserTokenSSR,
 } from "next-firebase-auth";
 
-function Home() {
+function Landing() {
   const AuthUser = useAuthUser();
   return (
     <div className="bg-gray-200">
@@ -57,4 +57,4 @@ function Home() {
 
 export const getServerSideProps = withAuthUserTokenSSR()();
 
-export default withAuthUser()(Home);
+export default withAuthUser()(Landing);
