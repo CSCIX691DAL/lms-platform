@@ -33,10 +33,28 @@ function Home() {
                 </h1>
               </div>
             </div>
-            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center">
-              <h1 className="mx-auto text-6xl font-bold text-black">
-                Main Content
-              </h1>
+            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center flex-col space-y-2">
+              <div className="mainContentData w-full bg-white border py-2">
+                <h1 className="px-2 ">Course 1</h1>
+                <h2 className="px-2 font-bold text-lg">Course Material</h2>
+              </div>
+              <div className="contentDisplay w-full bg-gray-50 border">
+                <div className="border-b bg-white w-full py-1 px-1 flex">
+                  <div className="flex-1 m-auto"><div className="w-6 h-6 bg-red-400 rounded"></div></div>
+                  <div className="flex-1 m-auto text-center">time uploaded</div>
+                  <div className="flex-1 m-auto text-right">delete</div>
+                </div>
+                <p className="p-1">Testing Iframes</p>
+                <iframe className="w-full" src="https://docs.google.com/presentation/d/e/2PACX-1vT21R4FsbBh7Qsf_87W-mtgvGoryzD56B6cJ6IHSvwNzSi2KWVrIlJMaxEb2ozEfZ4N7zX0-Uof3OFC/embed?start=true&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              </div>
+              <div className="contentDisplay w-full bg-gray-50 border h-72">
+                <div className="border-b bg-white w-full py-1 px-1 flex">
+                  <div className="flex-1 m-auto"><div className="w-6 h-6 bg-red-400 rounded"></div></div>
+                  <div className="flex-1 m-auto text-center">time uploaded</div>
+                  <div className="flex-1 m-auto text-right">delete</div>
+                </div>
+                <iframe className="w-full h-full" src="https://docs.google.com/presentation/d/e/2PACX-1vT21R4FsbBh7Qsf_87W-mtgvGoryzD56B6cJ6IHSvwNzSi2KWVrIlJMaxEb2ozEfZ4N7zX0-Uof3OFC/embed?start=true&loop=false&delayms=3000" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+              </div>
             </div>
           </div>
         </section>
