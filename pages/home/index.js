@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Nav } from "../../components/Nav";
 import { Sidebar } from "../../components/Sidebar";
+import { Displays } from "../../components/Displays"
 import {
   useAuthUser,
   withAuthUser,
@@ -33,10 +34,12 @@ function Home() {
                 </h1>
               </div>
             </div>
-            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center">
-              <h1 className="mx-auto text-6xl font-bold text-black">
-                Main Content
-              </h1>
+            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center flex-col space-y-2">
+              <div className="mainContentData w-full bg-white border py-2">
+                <h1 className="px-2 ">Course 1</h1>
+                <h2 className="px-2 font-bold text-lg">Course Material</h2>
+              </div>
+              <Displays />
             </div>
           </div>
         </section>
