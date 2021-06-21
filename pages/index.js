@@ -43,7 +43,7 @@ function Landing() {
                 color="primary"
                 disabled={!AuthUser.email}
               >
-                <Link href="/auth">
+                <Link href="/home">
                   <a>Proceed to LMS Platform</a>
                 </Link>
               </Button>
