@@ -96,7 +96,7 @@ export const Nav = ({ email, signOut }) => {
                     />
                     <div className="mx-4 inline-block">
                         <Button
-                            variant="container"
+                            variant="contained"
                             onClick={() => {
                                 signOut();
                             }}
