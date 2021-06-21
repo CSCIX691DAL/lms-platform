@@ -5,6 +5,7 @@ on:
     branches:
       - master
       - main
+      - dev
 
 env:
   CLOUD_RUN_PROJECT_ID: ${{ secrets.CLOUD_RUN_PROJECT_NAME }}
