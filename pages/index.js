@@ -22,7 +22,12 @@ function Landing() {
         <section className="flex h-screen">
           <div className="m-auto text-center">
             <h1 className="font-bold text-4xl">Welcome to LMS Platform</h1>
-            <p className="font-medium text-lg">
+            <p className="font-medium text-lg mt-2">
+              Welcome:{" "}
+              {AuthUser.displayName
+                ? AuthUser.displayName
+                : "Sign in to continue!"}
+              <br />
               User Email:{" "}
               {AuthUser.email ? AuthUser.email : "Not currently signed in"}.
             </p>
