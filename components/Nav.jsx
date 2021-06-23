@@ -26,7 +26,6 @@ export const Nav = ({ email, signOut }) => {
     const home = '/' + base + '/';
     const quiz = '/' + base + '/quiz';
     const assignment = '/' + base + '/assignment';
-    const lecture = '/' + base + '/lecture';
 
     return (
         <>
@@ -69,11 +68,6 @@ export const Nav = ({ email, signOut }) => {
                         <Link href={home}>
                             <a className="text-md lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
                                 Home
-                            </a>
-                        </Link>
-                        <Link href={lecture}>
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white">
-                                Lectures
                             </a>
                         </Link>
                         <Link href={quiz}>
