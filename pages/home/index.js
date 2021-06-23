@@ -35,8 +35,17 @@ function Home() {
             </div>
             <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center">
               <h1 className="mx-auto text-6xl font-bold text-black">
-                Main Content
-              </h1>
+                Main Content 
+                </h1>
+                <p>
+                const welcome = db.collection('Announcements').doc('Welcome');
+									 const doc = await welcome.get();
+										if (!doc.exists) {
+  										console.log('No such document!');
+										} else {
+  										console.log('Document data:', doc.data());
+									 }
+              </p>
             </div>
           </div>
         </section>
