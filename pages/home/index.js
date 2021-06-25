@@ -1,8 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Nav } from "../../components/Nav";
-import { Sidebar } from "../../components/Sidebar";
-import { Displays } from "../../components/Displays"
+import { MainDisplay } from "../../components/MainDisplay" 
 import {
   useAuthUser,
   withAuthUser,
@@ -22,27 +21,7 @@ function Home() {
       <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
       <main>
-        <section className="mainLayout h-screen">
-          <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12 bg-gray-200">
-            <div className="col-span-2 h-full bg-gray-100 border-l border-r border-b border-gray-400 text-black">
-              <div className="courseNav container h-1/2">
-                <Sidebar></Sidebar>
-              </div>
-              <div className="workNav container border-t border-gray-400 h-1/2">
-                <h1 className="mx-auto text-2xl font-bold text-black">
-                  User Settings/Profile
-                </h1>
-              </div>
-            </div>
-            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 border-r border-b border-gray-400 flex items-center flex-col space-y-2">
-              <div className="mainContentData w-full bg-white border py-2">
-                <h1 className="px-2 ">Course 1</h1>
-                <h2 className="px-2 font-bold text-lg">Course Material</h2>
-              </div>
-              <Displays />
-            </div>
-          </div>
-        </section>
+        <MainDisplay/>
       </main>
     </div>
   );

@@ -2,7 +2,6 @@ import { init } from "next-firebase-auth";
 
 const initAuth = () => {
   init({
-    debug: false,
     authPageURL: "/",
     appPageURL: "/home",
     loginAPIEndpoint: "/api/login", // required
@@ -22,7 +21,7 @@ const initAuth = () => {
     firebaseClientInitConfig: {
       apiKey: "AIzaSyDmGrCHU6U5C8aCFC6dgjmLRpUNOpl7fq0", // required
       authDomain: "lms-project-x691.firebaseapp.com",
-      projectId: "lms-project-x691",
+      projectId: process.env.FIREBASE_PROJECT_ID,
     },
     cookies: {
       name: "LMSPlatform", // required
