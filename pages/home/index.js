@@ -9,30 +9,9 @@ import {
   withAuthUserTokenSSR,
   AuthAction,
 } from "next-firebase-auth";
-import ReadFirestore from "../../firestore/ReadFirestore";
-import firebase from "../../initFirebase";
-
-firebase();
 
 function Home() {
   const AuthUser = useAuthUser();
-  // const [announce, setAnnounce] = useState();
-  // const announcement = () => {
-  //   firebase
-  //     .firestore()
-  //     .collection("Announcements")
-  //     .doc("test")
-  //     .onSnapshot(function (doc) {
-  //       console.log(doc.data());
-  //     });
-  // };
-
-  // const doc = await welcome.get();
-  // if (!doc.exists) {
-  //   console.log("No such document!");
-  // } else {
-  //   console.log("Document data:", doc.data());
-  // }
 
   return (
     <div className="bg-gray-200">

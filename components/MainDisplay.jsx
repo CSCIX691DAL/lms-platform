@@ -2,7 +2,7 @@ import { Sidebar } from "./Sidebar";
 import ReadFirestore from "../firestore/ReadFirestore";
 import firebase from "../initFirebase"
 
-firebase()
+firebase();
 
 export const MainDisplay = () => {
 
@@ -25,7 +25,6 @@ export const MainDisplay = () => {
               </div>
             </div>
             <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 flex items-center">
-              <ReadFirestore></ReadFirestore>
               <h1 className="mx-auto text-6xl font-bold text-black">
                 Main Content
               </h1>
