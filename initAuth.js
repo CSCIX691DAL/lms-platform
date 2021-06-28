@@ -10,7 +10,7 @@ const initAuth = () => {
     // Required in most cases.
     firebaseAdminInitConfig: {
       credential: {
-        projectId: process.env.FIREBASE_PROJECT_ID,
+        projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
         clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
         // The private key must not be accesssible on the client side.
         privateKey: process.env.FIREBASE_PRIVATE_KEY
@@ -19,9 +19,9 @@ const initAuth = () => {
       },
     },
     firebaseClientInitConfig: {
-      apiKey: "AIzaSyDmGrCHU6U5C8aCFC6dgjmLRpUNOpl7fq0", // required
-      authDomain: "lms-project-x691.firebaseapp.com",
-      projectId: process.env.FIREBASE_PROJECT_ID,
+      apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY, // required
+      authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
     },
     cookies: {
       name: "LMSPlatform", // required
