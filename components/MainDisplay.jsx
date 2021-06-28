@@ -1,5 +1,5 @@
 import { Sidebar } from "./Sidebar";
-import ReadFirestore from "../firestore/ReadFirestore";
+import ReadFirestore from "../pages/firebase/firestore/ReadFirestore";
 import firebase from "../initFirebase"
 
 firebase();
