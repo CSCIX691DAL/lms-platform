@@ -6,7 +6,7 @@ initAuth();
 const handler = async (req, res) => {
   try {
     await setAuthCookies(req, res);
-    console.log(res);
+    // console.log(res);
   } catch (e) {
     // eslint-disable-next-line no-console
     console.error(e);

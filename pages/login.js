@@ -28,8 +28,8 @@ const Login = () => (
   </div>
 );
 
-export const getServerSideProps = withAuthUserTokenSSR({
-  whenAuthed: AuthAction.REDIRECT_TO_APP,
-})();
+export const getServerSideProps = withAuthUserTokenSSR()();
 
-export default withAuthUser({ whenAuthed: AuthAction.REDIRECT_TO_APP })(Login);
+export default withAuthUser({
+  whenAuthed: AuthAction.REDIRECT_TO_APP,
+})(Login);
