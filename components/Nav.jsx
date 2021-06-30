@@ -48,19 +48,19 @@ export const Nav = ({ email, signOut }) => {
 
     return (
         <>
-            <nav className="flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 ">
+            <nav className='flex items-center flex-wrap bg-gray-200 border-b border-gray-400 p-3 '>
                 <Link href={home}>
-                    <a className="hidden lg:block items-center p-2 mr-4 ">
-                        <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
+                    <a className='hidden lg:block items-center p-2 mr-4 '>
+                        <span className='text-2xl mr-2 text-black font-bold uppercase tracking-wide'>
                             LMS
                         </span>
-                        <span className="text-xl text-black tracking-wide">
+                        <span className='text-xl text-black tracking-wide'>
                             Platform
                         </span>
                     </a>
                 </Link>
 
-                <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
+                <div className='lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto'>
                     <Link href={home}>
                         <a
                             className={`${
@@ -95,24 +95,24 @@ export const Nav = ({ email, signOut }) => {
                         </a>
                     </Link>
                 </div>
-                <div className="my-auto">
+                <div className='my-auto'>
                     {' '}
                     <Icon
-                        className="mx-8 inline-block"
+                        className='mx-8 inline-block'
                         icon={bxNotification}
                         style={{ color: '#0f172a', fontSize: '30px' }}
                     />
                 </div>
-                <div className="my-auto">
+                <div className='my-auto'>
                     <Button
-                        aria-controls="simple-menu"
-                        aria-haspopup="true"
+                        aria-controls='simple-menu'
+                        aria-haspopup='true'
                         onClick={handleClick}
                     >
                         Open Menu
                     </Button>
                     <Menu
-                        id="simple-menu"
+                        id='simple-menu'
                         anchorEl={anchorEl}
                         keepMounted
                         open={Boolean(anchorEl)}
