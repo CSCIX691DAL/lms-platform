@@ -6,17 +6,6 @@ import {
 } from "next-firebase-auth";
 import FirebaseAuth from "../firebase/FirebaseAuth";
 
-const styles = {
-  content: {
-    padding: `8px 32px`,
-  },
-  textContainer: {
-    display: "flex",
-    justifyContent: "center",
-    margin: 16,
-  },
-};
-
 const Login = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
     <div className="max-w-md w-full space-y-8">

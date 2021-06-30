@@ -1,11 +1,7 @@
 import { Sidebar } from "./Sidebar";
 
-export const MainDisplay = (claims) => {
-  if (claims.claims.admin) {
-    console.log("is an admin!")
-  } else {
-    console.log("is a student!")
-  }
+export const MainDisplay = () => {
+  
   return (
     <section className="mainLayout h-screen bg-gray-100">
       <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12">

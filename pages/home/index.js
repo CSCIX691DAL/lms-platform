@@ -22,7 +22,7 @@ function Home() {
       <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
       <main>
-        <MainDisplay claims={AuthUser.claims} />
+        <MainDisplay />
       </main>
     </div>
   );
