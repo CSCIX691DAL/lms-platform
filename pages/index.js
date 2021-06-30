@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Button from "@material-ui/core/Button";
 import Link from "next/link";
-import Displays from "../components/Displays"
+import Displays from "../components/CourseDisplays"
 import {
   useAuthUser,
   withAuthUser,
