@@ -1,13 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Nav } from "../../components/Nav";
-import { MainDisplay } from "../../components/MainDisplay" 
+import { MainDisplay } from "../../components/MainDisplay";
 import {
   useAuthUser,
   withAuthUser,
   withAuthUserTokenSSR,
   AuthAction,
 } from "next-firebase-auth";
+import { getFirebaseAdmin } from "next-firebase-auth";
 
 function Home() {
   const AuthUser = useAuthUser();
@@ -21,13 +22,30 @@ function Home() {
       <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
       <main>
-        <MainDisplay/>
+        <MainDisplay />
       </main>
     </div>
   );
 }
 
-export const getServerSideProps = withAuthUserTokenSSR()();
+export const getServerSideProps = withAuthUserTokenSSR()(
+  async ({ AuthUser }) => {
+    const user = await getFirebaseAdmin().auth().getUserByEmail(AuthUser.email);
+    if (user.email == "lmsplatformcscix691@gmail.com") {
+      if (user.customClaims && user.customClaims.admin == true) {
+        console.log("user is admin");
+        return;
+      }
+      return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
+        admin: true,
+      });
+    } else {
+      return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
+        student: true,
+      });
+    }
+  }
+);
 
 export default withAuthUser({
   whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
