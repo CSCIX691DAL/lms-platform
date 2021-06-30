@@ -1,17 +1,22 @@
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import { Avatar, Image } from 'antd';
-import { Icon, InlineIcon } from '@iconify/react';
-import bxNotification from '@iconify/icons-bx/bx-notification';
-import firebase from 'firebase/app';
-import Button from '@material-ui/core/Button';
-import { useRouter } from 'next/router';
+
+import React from "react";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import { Icon, InlineIcon } from "@iconify/react";
+import bxNotification from "@iconify/icons-bx/bx-notification";
+import firebase from "firebase/app";
+import Button from "@material-ui/core/Button";
+import { useRouter } from "next/router";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+
 
 // This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = ({ email, signOut }) => {
-    const router = useRouter();
-    const current = router.pathname;
-    const base = current.split('/')[1];
+  const router = useRouter();
+  const current = router.pathname;
+  const base = current.split("/")[1];
+
 
     const [select, setSelect] = useState('home');
     useEffect(() => {
@@ -30,19 +35,21 @@ export const Nav = ({ email, signOut }) => {
         }
     }, [current]);
 
-    const [active, setActive] = useState(false);
-    const [openNotification, setOpenNotification] = useState(null);
+   
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleCloseNotification = () => {
-        setOpenNotification(null);
-    };
-    const handleClick = () => {
-        setActive(!active);
-    };
 
-    const home = '/' + base + '/';
-    const quiz = '/' + base + '/quiz';
-    const assignment = '/' + base + '/assignment';
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  
+  const home = "/" + base + "/";
+  const quiz = "/" + base + "/quiz";
+  const assignment = "/" + base + "/assignment";
 
     return (
         <>
@@ -57,30 +64,7 @@ export const Nav = ({ email, signOut }) => {
                         </span>
                     </a>
                 </Link>
-                <button
-                    className=" inline-flex p-3 hover:bg-blue-500 rounded lg:hidden text-white  hover:text-white outline-none"
-                    onClick={handleClick}
-                >
-                    <span className="text-2xl mr-2 text-black font-bold uppercase tracking-wide">
-                        LMS
-                    </span>
-                    <span className="text-xl text-black tracking-wide">
-                        Platform
-                    </span>
-                </button>
-                {/*Note that in this div we will use a ternary operator to decide whether or not to display the content of the div  */}
-                <div className="lg:hidden ml-auto">
-                    <Icon
-                        icon={bxNotification}
-                        style={{ color: '#0f172a', fontSize: '30px' }}
-                    />
-                    <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
-                </div>
-                <div
-                    className={`${
-                        active ? '' : 'hidden'
-                    }   w-full lg:inline-flex lg:flex-grow lg:w-auto`}
-                >
+                
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href={home}>
                             <a
@@ -116,25 +100,41 @@ export const Nav = ({ email, signOut }) => {
                             </a>
                         </Link>
                     </div>
-                </div>
-                <div className="hidden lg:block ml-auto flex items-center justify-center">
-                    <Icon
-                        className="mx-8 inline-block"
-                        icon={bxNotification}
-                        style={{ color: '#0f172a', fontSize: '30px' }}
-                    />
-                    <div className="mx-4 inline-block">
-                        <Button
-                            variant="contained"
-                            onClick={() => {
-                                signOut();
-                            }}
-                        >
-                            Sign out
-                        </Button>
-                        {/* <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /> */}
-                    </div>
-                </div>
+                        <div className="my-auto">
+            {" "}
+            <Icon
+              className="mx-8 inline-block"
+              icon={bxNotification}
+              style={{ color: "#0f172a", fontSize: "30px" }}
+            />
+          </div>
+          <div className="m-auto">
+            <Button
+              aria-controls="simple-menu"
+              aria-haspopup="true"
+              onClick={handleClick}
+            >
+              Open Menu
+            </Button>
+            <Menu
+              id="simple-menu"
+              anchorEl={anchorEl}
+              keepMounted
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              <MenuItem onClick={handleClose}>Profile</MenuItem>
+              <MenuItem onClick={handleClose}>My account</MenuItem>
+              <MenuItem
+                onClick={() => {
+                  signOut();
+                }}
+              >
+                Logout
+              </MenuItem>
+            </Menu>
+          </div>
+
             </nav>
         </>
     );
