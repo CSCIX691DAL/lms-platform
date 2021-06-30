@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Avatar, Image } from 'antd';
 import { Icon, InlineIcon } from '@iconify/react';
 import bxNotification from '@iconify/icons-bx/bx-notification';
@@ -12,6 +12,23 @@ export const Nav = ({ email, signOut }) => {
     const router = useRouter();
     const current = router.pathname;
     const base = current.split('/')[1];
+
+    const [select, setSelect] = useState('home');
+    useEffect(() => {
+        if (current.split('/').length === 2) {
+            setSelect('home');
+        } else if (
+            current.split('/').length === 3 &&
+            current.split('/')[2] === 'quiz'
+        ) {
+            setSelect('quiz');
+        } else if (
+            current.split('/').length === 3 &&
+            current.split('/')[2] === 'assignment'
+        ) {
+            setSelect('assignment');
+        }
+    }, [current]);
 
     const [active, setActive] = useState(false);
     const [openNotification, setOpenNotification] = useState(null);
@@ -66,17 +83,35 @@ export const Nav = ({ email, signOut }) => {
                 >
                     <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start  flex flex-col lg:h-auto">
                         <Link href={home}>
-                            <a className="text-md lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white ">
+                            <a
+                                className={`${
+                                    select === 'home'
+                                        ? 'bg-blue-500 bg-opacity-50 text-white '
+                                        : 'text-black '
+                                }text-md lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50 hover:text-white `}
+                            >
                                 Home
                             </a>
                         </Link>
                         <Link href={quiz}>
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
+                            <a
+                                className={`${
+                                    select === 'quiz'
+                                        ? 'bg-blue-500 bg-opacity-50 text-white '
+                                        : 'text-black '
+                                } lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white`}
+                            >
                                 Quizzes
                             </a>
                         </Link>
                         <Link href={assignment}>
-                            <a className="lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded text-black  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white">
+                            <a
+                                className={`${
+                                    select === 'assignment'
+                                        ? 'bg-blue-500 bg-opacity-50 text-white '
+                                        : 'text-black '
+                                } lg:inline-flex lg:w-auto w-full mx-8 px-3 py-1 rounded  items-center justify-center hover:bg-blue-500 hover:bg-opacity-50  hover:text-white`}
+                            >
                                 Assignment
                             </a>
                         </Link>
