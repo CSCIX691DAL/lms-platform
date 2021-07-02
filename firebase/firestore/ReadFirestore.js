@@ -9,9 +9,12 @@ const ReadFirestore = () => {
         .collection("Announcements")
         .doc("test")
         .onSnapshot(function (doc) {
+          /*
+            REMOVE LATERs
+          */
           console.log(doc.data());
-          // console.log(doc.data().test);
-          // console.log(doc.data().test2);
+          console.log(doc.data().test);
+          console.log(doc.data().test2);
         });
       alert("Data was successfully fetched from cloud");
     } catch (error) {

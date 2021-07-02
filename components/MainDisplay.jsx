@@ -1,5 +1,5 @@
 import { Sidebar } from "./Sidebar";
-import ReadFirestore from "../pages/firebase/firestore/ReadFirestore";
+import ReadFirestore from "../firebase/firestore/ReadFirestore";
 import firebase from "../initFirebase"
 
 firebase();
@@ -28,6 +28,9 @@ export const MainDisplay = () => {
               <h1 className="mx-auto text-6xl font-bold text-black">
                 Main Content
               </h1>
+              <button>
+                <ReadFirestore></ReadFirestore>
+              </button>
             </div>
           </div>
         </section>
