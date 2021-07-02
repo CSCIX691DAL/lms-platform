@@ -2,7 +2,7 @@ import { Sidebar } from "./Sidebar";
 import ReadFirestore from "../firebase/firestore/ReadFirestore";
 import firebase from "../initFirebase"
 
-firebase()
+firebase();
 
 export const MainDisplay = () => {
   

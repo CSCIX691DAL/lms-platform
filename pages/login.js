@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import {
   withAuthUser,
   withAuthUserTokenSSR,
   AuthAction,
-} from "next-firebase-auth";
-import FirebaseAuth from "../firebase/FirebaseAuth";
+} from 'next-firebase-auth';
+import FirebaseAuth from '../firebase/FirebaseAuth';
 
 const Login = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
