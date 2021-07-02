@@ -1,4 +1,8 @@
 import { Sidebar } from "./Sidebar";
+import ReadFirestore from "../firebase/firestore/ReadFirestore";
+import firebase from "../initFirebase"
+
+firebase();
 
 export const MainDisplay = () => {
   
@@ -25,7 +29,9 @@ export const MainDisplay = () => {
             Main Content
           </h1>
           <div >
-
+            <button>
+              <ReadFirestore></ReadFirestore>
+            </button>
           </div>
         </div>
       </div>

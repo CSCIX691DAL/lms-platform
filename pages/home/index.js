@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Nav } from "../../components/Nav";
@@ -12,6 +13,7 @@ import { getFirebaseAdmin } from "next-firebase-auth";
 
 function Home() {
   const AuthUser = useAuthUser();
+
   return (
     <div className="bg-gray-200">
       <Head>
