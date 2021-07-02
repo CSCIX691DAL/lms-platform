@@ -1,38 +1,22 @@
-import React, { useState } from "react";
-import Head from "next/head";
-import Image from "next/image";
-import { Nav } from "../../components/Nav";
-import { MainDisplay } from "../../components/MainDisplay";
+import React, { useState } from 'react';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Nav } from '../../components/Nav';
+import { MainDisplay } from '../../components/MainDisplay';
 import {
   useAuthUser,
   withAuthUser,
   withAuthUserTokenSSR,
   AuthAction,
-} from "next-firebase-auth";
-import ReadFirestore from "../../firestore/ReadFirestore";
-import firebase from "../../initFirebase";
+} from 'next-firebase-auth';
+import ReadFirestore from '../../firebase/firestore/ReadFirestore';
+import firebase from '../../initFirebase';
+import { getFirebaseAdmin } from 'next-firebase-auth';
 
 firebase();
 
 function Home() {
   const AuthUser = useAuthUser();
-  // const [announce, setAnnounce] = useState();
-  // const announcement = () => {
-  //   firebase
-  //     .firestore()
-  //     .collection("Announcements")
-  //     .doc("test")
-  //     .onSnapshot(function (doc) {
-  //       console.log(doc.data());
-  //     });
-  // };
-
-  // const doc = await welcome.get();
-  // if (!doc.exists) {
-  //   console.log("No such document!");
-  // } else {
-  //   console.log("Document data:", doc.data());
-  // }
 
   return (
     <div className="bg-gray-200">
@@ -50,9 +34,27 @@ function Home() {
   );
 }
 
-export const getServerSideProps = withAuthUserTokenSSR()();
+export const getServerSideProps = withAuthUserTokenSSR()(
+  async ({ AuthUser }) => {
+    const user = await getFirebaseAdmin().auth().getUserByEmail(AuthUser.email);
+    if (user.email == 'lmsplatformcscix691@gmail.com') {
+      if (user.customClaims && user.customClaims.admin == true) {
+        console.log('user is admin');
+        return;
+      }
+      return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
+        admin: true,
+      });
+    } else {
+      console.log('user is student');
+      return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
+        student: true,
+      });
+    }
+  }
+);
 
 export default withAuthUser({
   whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
-  authPageURL: "/",
+  authPageURL: '/',
 })(Home);

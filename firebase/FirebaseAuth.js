@@ -9,8 +9,6 @@ import "firebase/auth";
 
 const firebaseAuthConfig = {
   signInFlow: "popup",
-  // Auth providers
-  // https://github.com/firebase/firebaseui-web#configure-oauth-providers
   signInOptions: [
     {
       provider: firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -19,17 +17,11 @@ const firebaseAuthConfig = {
   signInSuccessUrl: "/",
   credentialHelper: "none",
   callbacks: {
-    // https://github.com/firebase/firebaseui-web#signinsuccesswithauthresultauthresult-redirecturl
-    signInSuccessWithAuthResult: () =>
-      // Don't automatically redirect. We handle redirecting based on
-      // auth state in withAuthComponent.js.
-      false,
+    signInSuccessWithAuthResult: () => false,
   },
 };
 
 function FirebaseAuth() {
-  // Do not SSR FirebaseUI, because it is not supported.
-  // https://github.com/firebase/firebaseui-web/issues/213
   const [renderAuth, setRenderAuth] = useState(false);
   useEffect(() => {
     if (typeof window !== "undefined") {
