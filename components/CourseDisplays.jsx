@@ -7,8 +7,8 @@ export const CourseDisplays = () => {
         <div className=' bg-white font-semibold p-2 flex'>
           <div className='flex-1 m-auto'>
             <div className='inline-flex m-auto'>
-              <div className='w-6 h-6 bg-red-500 rounded-sm'></div>
-              <span className='m-auto px-2'> Author </span>
+              <div className='w-7 h-7 bg-red-500 rounded-sm mx-auto'></div>
+              <span className='m-auto px-2 mx-auto'> Author </span>
             </div>
           </div>
           <div className='flex-1 m-auto text-right'>Title</div>
@@ -17,10 +17,6 @@ export const CourseDisplays = () => {
         <iframe
           className='w-full h-screen'
           src='https://docs.google.com/viewer?embedded=true&url=https://homepages.inf.ed.ac.uk/neilb/math.pdf'
-          frameborder='0'
-          allowfullscreen='true'
-          mozallowfullscreen='true'
-          webkitallowfullscreen='true'
         ></iframe>
       </div>
     </>

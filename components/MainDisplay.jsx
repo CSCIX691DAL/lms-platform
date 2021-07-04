@@ -34,7 +34,8 @@ export const MainDisplay = () => {
               <CourseDisplays></CourseDisplays>
               </div>
           <div >
-            <button>
+            
+            <button className="bg-green-400 p-4 m-2">
               <ReadFirestore></ReadFirestore>
             </button>
           </div>
