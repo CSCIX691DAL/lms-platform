@@ -24,7 +24,9 @@ export const MainDisplay = () => {
           </div>
           <div className="workNav container h-3/4">
             <h1 className="mx-auto font-bold text-black border-b-2">Modules</h1>
-            <Modules />
+            <div className="mt-2">
+              <Modules />
+            </div>
           </div>
         </div>
         <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 items-center shadow flex flex-col">
