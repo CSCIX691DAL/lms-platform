@@ -35,7 +35,7 @@ export const Modules = () => {
               <Menu.Item
                 key={index}
                 icon={<FileTextTwoTone />}
-                onClick={() => setClicked(index)}
+                onClick={() => setClicked(index.toString())}
               >
                 <Link href={path}>{i}</Link>
               </Menu.Item>
