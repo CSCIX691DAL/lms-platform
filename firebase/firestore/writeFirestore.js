@@ -20,42 +20,44 @@ const WriteGeneralAnnouncement = () => {
     
     //Writes to a specific course's document
     const WriteCourseAnnouncement = () => {
-    const sendData = () => {
-        try {
-            firebase
-                .firestore()
-                .collection('Announcements')
-                .doc(CourseCode) 
-                .set({
-                    title: title,
-                    paragraph: announcementText,
-                    time: firebase.firestore.FieldValue.serverTimestamp(),
-                })
-                .then(alert('Announcement was successfully added.'))
-        } catch (error) {
-            console.log(error)
-            alert(error)
+        const sendData = () => {
+            try {
+                firebase
+                    .firestore()
+                    .collection('Announcements')
+                    .doc(CourseCode) 
+                    .set({
+                        title: title,
+                        paragraph: announcementText,
+                        time: firebase.firestore.FieldValue.serverTimestamp(),
+                    })
+                    .then(alert('Announcement was successfully added.'))
+            } catch (error) {
+                console.log(error)
+                alert(error)
+            }
         }
     }
     
     //Sends content to the databsase
     const WriteContent = () => {
-    const sendData = () => {
-        try {
-            firebase
-                .firestore()
-                .collection('Content')
-                .doc(CourseCode)
-                .collection(Unit)
-                .set({
-                    title: 'Title ',
-                    file: filename,
-                    time: firebase.firestore.FieldValue.serverTimestamp(),
-                })
-                .then(alert('Content successfully uploaded.'))
-        } catch (error) {
-            console.log(error)
-            alert(error)
+        const sendData = () => {
+            try {
+                firebase
+                    .firestore()
+                    .collection('Content')
+                    .doc(CourseCode)
+                    .collection(Unit)
+                    .set({
+                        title: 'Title ',
+                        file: filename,
+                        time: firebase.firestore.FieldValue.serverTimestamp(),
+                    })
+                    .then(alert('Content successfully uploaded.'))
+            } catch (error) {
+                console.log(error)
+                alert(error)
+            }
         }
     }
     
@@ -81,22 +83,24 @@ const WriteGeneralAnnouncement = () => {
     */
     
     //Adding questions. Would depend on above. 
-    const AddQuestion = () => {
-    const sendData = () => {
-        try {
-            firebase
-                .firestore()
-                .collection('Quiz')
-                .doc(CourseCode) 
-                .collection(quizName)
-                .set({
-                    question: questionText,
-                    answer: answerText,
-                    time: firebase.firestore.FieldValue.serverTimestamp(),
-                })
-                .then(alert('Data was successfully sent to cloud firestore!'))
-        } catch (error) {
-            console.log(error)
-            alert(error)
-        }
-    }
+    // const AddQuestion = () => {
+    //     const sendData = () => {
+    //         try {
+    //             firebase
+    //                 .firestore()
+    //                 .collection('Quiz')
+    //                 .doc(CourseCode) 
+    //                 .collection(quizName)
+    //                 .set({
+    //                     question: questionText,
+    //                     answer: answerText,
+    //                     time: firebase.firestore.FieldValue.serverTimestamp(),
+    //                 })
+    //                 .then(alert('Data was successfully sent to cloud firestore!'))
+    //         } catch (error) {
+    //             console.log(error)
+    //             alert(error)
+    //         }
+    //     }
+    // }
+}
