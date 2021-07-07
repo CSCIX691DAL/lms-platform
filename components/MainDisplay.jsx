@@ -25,7 +25,7 @@ export const MainDisplay = () => {
             </h1>
           </div>
         </div>
-            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 items-center shadow flex flex-col">
+            <div className="mainContent col-span-10 h-full bg-gray-100 items-center shadow flex flex-col">
               <div className="mainContentData w-full bg-white py-2 shadow-sm">
                 <h1 className="px-2 ">Course 1</h1>
                 <h2 className="px-2 font-bold text-lg">Course Material</h2>

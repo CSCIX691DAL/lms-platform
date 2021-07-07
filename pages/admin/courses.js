@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { Nav } from '../../components/Nav';
-import { AdminDisplay } from '../../components/admin/AdminDisplay';
+import { CourseDisplay } from '../../components/admin/Courses/AdminCourseDisplay';
 import {
   useAuthUser,
   withAuthUser,
@@ -9,7 +9,7 @@ import {
   AuthAction,
 } from 'next-firebase-auth';
 
-function Admin() {
+function Courses() {
   const AuthUser = useAuthUser();
 
   return (
@@ -23,7 +23,7 @@ function Admin() {
         <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
         <main>
-          <AdminDisplay user={AuthUser} />
+          <CourseDisplay user={AuthUser} />
         </main>
       </div>
     </>
@@ -35,4 +35,4 @@ export const getServerSideProps = withAuthUserTokenSSR()();
 export default withAuthUser({
   whenUnauthedAfterInit: AuthAction.REDIRECT_TO_LOGIN,
   authPageURL: '/',
-})(Admin);
+})(Courses);
