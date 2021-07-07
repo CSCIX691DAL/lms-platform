@@ -10,7 +10,7 @@ import { FileTextTwoTone } from '@ant-design/icons';
 
 export const Modules = () => {
   const [modules, setModules] = useState([]);
-  const [clicked, setClicked] = useState('0');
+  const [clicked, setClicked] = useState('');
   const router = useRouter();
   const current = router.pathname;
   const course = current.split('/')[1];
@@ -18,6 +18,7 @@ export const Modules = () => {
 
   useEffect(() => {
     const db = firebase.firestore();
+    const { module } = router.query;
 
     try {
       db.collection('LMS')
@@ -31,6 +32,9 @@ export const Modules = () => {
           const displayArray = [];
           moduleArray.forEach((i, index) => {
             const path = current + '/?module=' + i;
+            if (i === module) {
+              setClicked(index.toString());
+            }
             displayArray.push(
               <Menu.Item
                 key={index}
@@ -48,7 +52,7 @@ export const Modules = () => {
       console.log(error);
       alert(error);
     }
-  }, [course]);
+  }, [router]);
 
   return (
     <>
