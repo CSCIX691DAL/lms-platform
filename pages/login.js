@@ -4,18 +4,7 @@ import {
   withAuthUserTokenSSR,
   AuthAction,
 } from "next-firebase-auth";
-import FirebaseAuth from "../components/FirebaseAuth";
-
-const styles = {
-  content: {
-    padding: `8px 32px`,
-  },
-  textContainer: {
-    display: "flex",
-    justifyContent: "center",
-    margin: 16,
-  },
-};
+import FirebaseAuth from "../firebase/FirebaseAuth";
 
 const Login = () => (
   <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -28,8 +17,8 @@ const Login = () => (
   </div>
 );
 
-export const getServerSideProps = withAuthUserTokenSSR({
-  whenAuthed: AuthAction.REDIRECT_TO_APP,
-})();
+export const getServerSideProps = withAuthUserTokenSSR()();
 
-export default withAuthUser({ whenAuthed: AuthAction.REDIRECT_TO_APP })(Login);
+export default withAuthUser({
+  whenAuthed: AuthAction.REDIRECT_TO_APP,
+})(Login);
