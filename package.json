@@ -5,16 +5,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p $PORT",
+    "fmt": "prettier --write 'pages' 'components'"
   },
   "dependencies": {
+    "@firebase/firestore": "^2.3.6",
     "@headlessui/react": "^1.2.0",
+    "@heroicons/react": "^1.0.1",
     "@material-ui/core": "^4.11.4",
+    "@material-ui/lab": "^4.0.0-alpha.58",
+    "@tailwindcss/forms": "^0.3.3",
     "antd": "^4.16.2",
-    "firebase": "^8.6.2",
+    "dayjs": "^1.10.5",
+    "firebase": "^8.6.7",
     "next": "10.2.3",
+    "next-firebase-auth": "^0.13.1",
+    "nookies": "^2.5.2",
+    "prettier": "^2.3.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-alert": "^7.0.3",
+    "react-dom": "17.0.2",
+    "react-firebaseui": "^5.0.2",
+    "react-transition-group": "^4.4.2"
   },
   "devDependencies": {
     "@iconify/icons-bx": "^1.1.0",
