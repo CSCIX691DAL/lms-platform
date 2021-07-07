@@ -31,7 +31,7 @@ export const Nav = ({ email, signOut }) => {
 
   return (
     <>
-      <nav className="flex justify-between bg-white w-full p-2">
+      <nav className="flex justify-between bg-white w-full p-2 h-16 shadow">
         <div className="my-auto ">
           <a className="p-4 font-bold text-xl">
             <link rel="stylesheet" href="{home}" />
