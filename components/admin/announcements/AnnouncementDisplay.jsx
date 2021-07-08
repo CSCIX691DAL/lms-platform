@@ -1,10 +1,11 @@
+
 import firebase from "../../../initFirebase"
 import { Sidenav } from '../nav/Sidenav'
-import { Courses } from './Courses'
+import { AnnouncementTable } from './AnnouncementTable'
 
 firebase();
 
-export const AdminCourseDisplay = ({ user }) => {
+export const AnnouncementDisplay = ({ user }) => {
   if (user.claims.admin) {
     return ( 
       <>
@@ -20,16 +21,14 @@ export const AdminCourseDisplay = ({ user }) => {
                 </div>
               </div>
             </div>
-            <div className="mainContent col-span-10 h-full bg-gray-100 flex flex-col items-center">
+            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 flex flex-col items-center">
               <p className="mx-auto mt-4 text-4xl font-bold text-black">
-                Courses
+                Announcements
               </p>
-              <p className="mt-4 text-xl">
-                Click on the courses below to view uploaded files or to upload new ones.
+              <p className=" mt-10 mx-auto text-2xl text-black">
+                View or add new announcements below.
               </p>
-              <div className="w-full">
-                <Courses />
-              </div>
+              <AnnouncementTable />
             </div>
           </div>
         </section>

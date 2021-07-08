@@ -5,7 +5,12 @@ import { ChevronDownIcon } from '@heroicons/react/solid'
 export const Sidenav = () => {
   return (
     <div>
-      <div>
+      <div className="py-2">        
+        <a className="font-medium hover:text-black" href="/admin/announcements">
+          Announcements
+        </a>
+      </div>
+      <div className="py-2">
         <a className="font-medium hover:text-black" href="/admin/courses">
           Courses
         </a>

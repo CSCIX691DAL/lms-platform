@@ -1,7 +1,7 @@
 
 import firebase from "../../initFirebase"
-import { Sidenav } from './Sidenav'
-import { Courses } from './Courses/Courses'
+import { Sidenav } from './nav/Sidenav'
+import { Courses } from './courses/Courses'
 
 firebase();
 
