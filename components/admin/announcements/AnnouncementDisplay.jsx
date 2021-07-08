@@ -25,7 +25,7 @@ export const AnnouncementDisplay = ({ user }) => {
               <p className="mx-auto mt-4 text-4xl font-bold text-black">
                 Announcements
               </p>
-              <p className=" mt-10 mx-auto text-2xl text-black">
+              <p className=" mt-4 mx-auto text-2xl text-black">
                 View or add new announcements below.
               </p>
               <AnnouncementTable />

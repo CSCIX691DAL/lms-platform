@@ -3,7 +3,7 @@ import React from 'react'
 export const AnnouncementTable = () => {
   return (
     <div className="mt-10 shadow overflow-hidden w-full border-b border-gray-200 sm:rounded-b-lg">
-      <button className="w-full h-12 px-6 text-white transition-colors duration-150 bg-blue-400 rounded-t-lg focus:shadow-outline hover:bg-blue-600">Upload</button>
+      <button className="w-full h-12 px-6 text-white font-medium transition-colors duration-150 bg-blue-400 rounded-t-lg focus:shadow-outline hover:bg-blue-500">Upload</button>
       <table className="table-fixed min-w-full divide-y divide-gray-200"></table>
       <thead className="bg-gray-50">
         <tr>
