@@ -10,6 +10,7 @@ import {
   AuthAction,
 } from 'next-firebase-auth';
 import { getFirebaseAdmin } from 'next-firebase-auth';
+import { ProfileDisplay } from '../../components/ProfileDisplay';
 
 function Home() {
   const AuthUser = useAuthUser();
@@ -24,7 +25,7 @@ function Home() {
       <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
       <main>
-        <MainDisplay />
+        <ProfileDisplay />
       </main>
     </div>
   );

@@ -81,7 +81,9 @@ export const Nav = ({ email, signOut }) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
+              <Link href="/profile">
               <MenuItem onClick={handleClose}>Profile</MenuItem>
+              </Link>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem
                 onClick={() => {
