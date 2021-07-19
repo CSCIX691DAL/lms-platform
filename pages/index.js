@@ -1,13 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
-import Button from "@material-ui/core/Button";
-import Link from "next/link";
-import Displays from "../components/CourseDisplays"
+import Head from 'next/head';
+import Image from 'next/image';
+import Button from '@material-ui/core/Button';
+import Link from 'next/link';
+import Displays from '../components/CourseDisplays';
 import {
   useAuthUser,
   withAuthUser,
   withAuthUserTokenSSR,
-} from "next-firebase-auth";
+} from 'next-firebase-auth';
 
 function Landing() {
   const AuthUser = useAuthUser();
@@ -20,39 +20,65 @@ function Landing() {
       </Head>
 
       <main>
-        <section className="flex h-screen">
-          <div className="m-auto text-center">
-            <h1 className="font-bold text-4xl">Welcome to LMS Platform</h1>
-            <p className="font-medium text-lg mt-2">
-              Welcome:{" "}
-              {AuthUser.displayName
-                ? AuthUser.displayName
-                : "Sign in to continue!"}
-              <br />
-              User Email:{" "}
-              {AuthUser.email ? AuthUser.email : "Not currently signed in"}.
-            </p>
-            <div className="mt-5">
-              <Button
-                variant="contained"
-                color="primary"
-                disabled={AuthUser.email}
-              >
-                <Link href="/login">
-                  <a>Login</a>
-                </Link>
-              </Button>
+        <section className="flex flex-col md:flex-row h-screen items-center">
+          <div className="bg-white w-full md:max-w-md lg:max-w-full md:mx-auto md:mx-0 md:w-1/2 xl:w-1/3 h-screen px-6 lg:px-16 xl:px-12 flex items-center justify-center">
+            <div className="m-auto text-center">
+              <p className="font-medium text-lg mt-2">
+                Welcome:{' '}
+                {AuthUser.displayName
+                  ? AuthUser.displayName
+                  : 'Sign in to continue!'}
+                <br />
+                User Email:{' '}
+                {AuthUser.email ? AuthUser.email : 'Not currently signed in'}.
+              </p>
+              <div className="mt-5">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  disabled={AuthUser.email}
+                >
+                  <Link href="/login">
+                    <a>Login</a>
+                  </Link>
+                </Button>
+              </div>
+              <div className="mt-5">
+                <Button
+                  variant="contained"
+                  color="primary"
+                  disabled={!AuthUser.email}
+                >
+                  <Link href="/home">
+                    <a>Proceed to LMS Platform</a>
+                  </Link>
+                </Button>
+              </div>
             </div>
-            <div className="mt-5">
-              <Button
-                variant="contained"
-                color="primary"
-                disabled={!AuthUser.email}
-              >
-                <Link href="/home">
-                  <a>Proceed to LMS Platform</a>
-                </Link>
-              </Button>
+          </div>
+
+          <div className="hidden md:block w-full md:w-1/2 xl:w-2/3 h-screen">
+            <div className="relative h-full flex content-center items-center justify-center">
+              <div className="absolute top-0 w-full h-full bg-center bg-cover bg-landing">
+                <span
+                  id="blackOverlay"
+                  className="w-full h-full absolute opacity-75 bg-black"
+                ></span>
+              </div>
+              <div className="container relative mt-5 mx-auto">
+                <div className="items-center flex flex-wrap">
+                  <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
+                    <h1 className="text-white font-bold text-5xl">
+                      Welcome to LMS Platform
+                    </h1>
+                    <p className="text-white text-xl mt-10">
+                      An all-in-one learning platform for your enrolled courses.
+                      Simple, elegent, and easy to use. Login to proceed to your
+                      homepage.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
