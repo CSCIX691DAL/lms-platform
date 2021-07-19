@@ -1,5 +1,7 @@
 import React from 'react';
 import { List } from 'antd';
+import { HeartTwoTone } from '@ant-design/icons';
+
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
@@ -63,7 +65,12 @@ export const CourseDisplays = () => {
   if (module && !content) {
     return (
       <List
-        header={<div>{module}</div>}
+        header={
+          <div>
+            <HeartTwoTone twoToneColor="#eb2f96" />
+            {module}
+          </div>
+        }
         size="large"
         bordered
         dataSource={contentList}
@@ -73,6 +80,7 @@ export const CourseDisplays = () => {
   }
 
   if (module && content) {
+    console.log(courseData);
     return (
       <>
         <div className="contentDisplay w-full my-2 shadow-lg bg-white">
