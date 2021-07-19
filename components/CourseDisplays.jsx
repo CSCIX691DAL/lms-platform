@@ -1,6 +1,6 @@
 import React from 'react';
 import { List } from 'antd';
-import { HeartTwoTone } from '@ant-design/icons';
+import { TagsTwoTone } from '@ant-design/icons';
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -65,12 +65,7 @@ export const CourseDisplays = () => {
   if (module && !content) {
     return (
       <List
-        header={
-          <div>
-            <HeartTwoTone twoToneColor="#eb2f96" />
-            {module}
-          </div>
-        }
+        header={<b>{module}</b>}
         size="large"
         bordered
         dataSource={contentList}
