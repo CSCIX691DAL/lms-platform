@@ -37,12 +37,11 @@ export const AdminDisplay = ({ user }) => {
     return (
       <section className="mainLayout h-screen bg-gray-100">
         <div className="max-w-full h-full pb-4 ml-12 mr-12">          
-          <div className="mainContent overflow-auto h-full bg-gray-100 flex items-center">
-            <h1 className="mx-auto text-4xl font-bold text-black">
-              You do not have access, please return to the home page.
+          <div className="mainContent overflow-auto h-full bg-denied bg-cover flex flex-col items-center">
+            <h1 className="mx-auto text-8xl font-bold text-red-600">
+              403.
             </h1>
-            <div >
-            </div>
+            <p className="font-semibold text-xl text-red-600">Access Denied, please return to home page.</p>
           </div>
         </div>
       </section>
