@@ -29,6 +29,7 @@ const WriteGeneralAnnouncement = () => {
                     .set({
                         title: title,
                         paragraph: announcementText,
+                        course: CourseCode,
                         time: firebase.firestore.FieldValue.serverTimestamp(),
                     })
                     .then(alert('Announcement was successfully added.'))
