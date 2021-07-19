@@ -1,5 +1,5 @@
 # base image
-FROM node:14.15.4-alpine
+FROM node:16.1.0
 
 # Create and change to the app directory.
 WORKDIR /lms-platform
@@ -11,9 +11,8 @@ COPY . .
 
 # Install production dependencies.
 # If you add a package-lock.json, speed your build by switching to 'npm ci'.
-RUN npm ci
-RUN npm install tailwindcss
-
+RUN npm i
+RUN npx next telemetry disable
 # Copy local code to the container image.
 
 RUN npm run build
