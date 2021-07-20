@@ -2,6 +2,7 @@ import { Sidebar } from "./Sidebar";
 import { CourseDisplays } from "./CourseDisplays"
 import ReadFirestore from "../firebase/firestore/ReadFirestore";
 import firebase from "../initFirebase"
+import { ProfileDisplay } from "./ProfileDisplay";
 
 firebase();
 

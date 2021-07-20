@@ -1,19 +1,32 @@
-import React from "react";
-import Link from "next/link";
-import { useState } from "react";
-import { Icon, InlineIcon } from "@iconify/react";
-import bxNotification from "@iconify/icons-bx/bx-notification";
-import firebase from "firebase/app";
-import Button from "@material-ui/core/Button";
-import { useRouter } from "next/router";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import React from 'react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { Icon, InlineIcon } from '@iconify/react';
+import bxNotification from '@iconify/icons-bx/bx-notification';
+import firebase from 'firebase/app';
+import Button from '@material-ui/core/Button';
+import { useRouter } from 'next/router';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
+import { makeStyles } from '@material-ui/core/styles';
+import ButtonBase from '@material-ui/core/ButtonBase';
+import Avatar from '@material-ui/core/Avatar';
 
 // This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = ({ email, signOut }) => {
   const router = useRouter();
   const current = router.pathname;
-  const base = current.split("/")[1];
+  const base = current.split('/')[1];
+
+  const useStyles = makeStyles((theme) => ({
+    button: {
+      margin: theme.spacing(1),
+      borderRadius: '10em',
+    },
+    input: {
+      display: 'none',
+    },
+  }));
 
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -25,9 +38,9 @@ export const Nav = ({ email, signOut }) => {
     setAnchorEl(null);
   };
 
-  const home = "/" + base + "/";
-  const quiz = "/" + base + "/quiz";
-  const assignment = "/" + base + "/assignment";
+  const home = '/' + base + '/';
+  const quiz = '/' + base + '/quiz';
+  const assignment = '/' + base + '/assignment';
 
   return (
     <>
@@ -59,11 +72,11 @@ export const Nav = ({ email, signOut }) => {
           </ul>
 
           <div className="my-auto">
-            {" "}
+            {' '}
             <Icon
               className="mx-8 inline-block"
               icon={bxNotification}
-              style={{ color: "#0f172a", fontSize: "30px" }}
+              style={{ color: '#0f172a', fontSize: '30px' }}
             />
           </div>
           <div className="m-auto">
@@ -72,7 +85,7 @@ export const Nav = ({ email, signOut }) => {
               aria-haspopup="true"
               onClick={handleClick}
             >
-              Open Menu
+              <Avatar></Avatar>
             </Button>
             <Menu
               id="simple-menu"
@@ -82,7 +95,7 @@ export const Nav = ({ email, signOut }) => {
               onClose={handleClose}
             >
               <Link href="/profile">
-              <MenuItem onClick={handleClose}>Profile</MenuItem>
+                <MenuItem onClick={handleClose}>Profile</MenuItem>
               </Link>
               <MenuItem onClick={handleClose}>My account</MenuItem>
               <MenuItem

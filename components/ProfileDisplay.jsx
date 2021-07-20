@@ -3,10 +3,31 @@ import { CourseDisplays } from './CourseDisplays';
 import ReadFirestore from '../firebase/firestore/ReadFirestore';
 import firebase from '../initFirebase';
 import EditableLabel from 'react-inline-editing';
+import Avatar from '@material-ui/core/Avatar';
+import { makeStyles } from '@material-ui/core/styles';
+import react , {useState , useEffect} from 'react';
+import "firebase/auth";
 
 firebase();
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+    '& > *': {
+      margin: theme.spacing(1),
+    },
+  },
+  large: {
+    width: theme.spacing(30),
+    height: theme.spacing(30),
+  },
+}));
+
+
 export const ProfileDisplay = () => {
+  const classes = useStyles();
+
+
   return (
     <section className="mainLayout h-screen bg-gray-100 pt-16">
       <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12">
@@ -33,48 +54,21 @@ export const ProfileDisplay = () => {
           </div>
           <div className="p-5 bg-gray-50 w-full shadow mx-auto space-y-4 flex flex-col">
             <div className="mx-auto text-center">
-              <img
-                className="rounded-full pb-3"
-                src="https://via.placeholder.com/250"
-                alt=""
-              />
+              <Avatar variant="rounded" className={classes.large}></Avatar>
               <div className="bg-gray-100 p-1 flex flex-col space-y-1">
               <div className="text-lg text-center w-full "><EditableLabel text="Nickname" /></div>
               <div className="text-center w-full "><EditableLabel text="(Degree)" /></div>
               <div className="text-center font-semibold w-full pt-2"><EditableLabel text="Email@email.com" /></div>
             </div>
             </div>
-            <div className="m-auto p-2 bg-gray-100 w-full rounded">
-              <div className="p-2 font-semibold text-lg">Status</div>
-              <div className="flex flex-row space-x-10 place-content-center">
-                <div className="p-2">
-                  <input
-                    className="mr-1"
-                    type="radio"
-                    value="Male"
-                    name="Status"
-                  />{' '}
-                  Online
-                </div>
-                <div className="p-2">
-                  <input
-                    className="mr-1"
-                    type="radio"
-                    value="Female"
-                    name="Status"
-                  />{' '}
-                  Busy
-                </div>
-                <div className="p-2">
-                  <input
-                    className="mr-1"
-                    type="radio"
-                    value="Other"
-                    name="Status"
-                  />{' '}
-                  Offline
-                </div>
-              </div>
+            <div className="p-2 bg-gray-100 w-full rounded font-semibold text-lg">
+              Status <br />
+              <span className="text-base font-normal">
+                {' '}
+                <EditableLabel
+                  text="Hello"
+                />
+              </span>
             </div>
             <div className="p-2 bg-gray-100 w-full rounded font-semibold text-lg">
               Bio <br />
