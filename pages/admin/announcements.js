@@ -24,11 +24,67 @@ function Admin() {
 
         <main>
           <AnnouncementDisplay user={AuthUser} />
+            <form action="#" method="POST">
+        <div class="shadow sm:rounded-md sm:overflow-hidden">
+          <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+            <div class="grid grid-cols-3 gap-6">
+              <div class="col-span-3 sm:col-span-2">
+                <label for="title" class="block text-sm font-medium text-gray-700">
+                  Title
+                </label>
+                <div class="mt-1 flex rounded-md shadow-sm">
+                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                   
+                  </span>
+                  <input type="text" name="Title" id="title" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
+                </div>
+                  <div class="mt-1 flex rounded-md shadow-sm">
+                  <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
+                   
+                  </span>
+                  <input type="text" name="CourseCode" id="CourseCode" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
+                </div>
+                <div>
+              <label for="announcementText" class="block text-sm font-medium text-gray-700">
+                Announcement
+              </label>
+              <div class="mt-1">
+                <textarea id="announcementText" name="announcementText" rows="5" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md">
+                </textarea>
+              </div>
+             
+            </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              
         </main>
       </div>
     </>
   );
 }
+//Writes to a specific course's document
+    const WriteCourseAnnouncement = () => {
+        const sendData = () => {
+            try {
+                firebase
+                    .firestore()
+                    .collection('Announcements')
+                    .doc(CourseCode) 
+                    .set({
+                        title: title,
+                        paragraph: announcementText,
+                        course: CourseCode,
+                        time: firebase.firestore.FieldValue.serverTimestamp(),
+                    })
+                    .then(alert('Announcement was successfully added.'))
+            } catch (error) {
+                console.log(error)
+                alert(error)
+            }
+        }
+    }
 
 export const getServerSideProps = withAuthUserTokenSSR()();
 
