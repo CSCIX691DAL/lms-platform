@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundImage: (theme) => ({
         landing: "url('https://pbs.twimg.com/media/DwCUjMWUwAAtC6n.jpg')",
+        denied: "url('https://wallpapercave.com/wp/wp4266693.png')",
       }),
     },
   },
