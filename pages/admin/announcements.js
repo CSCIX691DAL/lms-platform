@@ -24,7 +24,7 @@ function Admin() {
 
         <main>
           <AnnouncementDisplay user={AuthUser} />
-            <form action="#" method="POST"></form>
+            <form action="#" method="POST">
         <div class="shadow sm:rounded-md sm:overflow-hidden">
           <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
             <div class="grid grid-cols-3 gap-6">
@@ -36,13 +36,16 @@ function Admin() {
                   <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                    
                   </span>
-                  <input type="text" name="Title" id="title" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"></input>
+                  <input type="text" name="Title" id="title" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
                 </div>
                   <div class="mt-1 flex rounded-md shadow-sm">
+                     <label for="CourseCode" class="block text-sm font-medium text-gray-700">
+                       Course Code
+                       </label>
                   <span class="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-sm">
                    
                   </span>
-                  <input type="text" name="CourseCode" id="CourseCode" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300"></input>
+                  <input type="text" name="CourseCode" id="CourseCode" class="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
                 </div>
                 <div>
               <label for="announcementText" class="block text-sm font-medium text-gray-700">
@@ -54,9 +57,10 @@ function Admin() {
               </div>
              
             </div>
-              </div>
-              </div>
-              </div>
+           </div>
+          </div>
+          </div>
+        </form>
               </div>
               
         </main>
