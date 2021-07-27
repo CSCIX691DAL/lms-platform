@@ -55,6 +55,9 @@ function Admin() {
                 <textarea id="announcementText" name="announcementText" rows="5" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md">
                 </textarea>
               </div>
+              <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
+               Post
+             </button>
              
             </div>
            </div>
