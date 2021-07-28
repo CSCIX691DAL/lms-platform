@@ -6,8 +6,9 @@ export const AnnoucementForm = () => {
         <form action="#" method="POST">
         <div className="w-full shadow sm:rounded-md sm:overflow-hidden">
             <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-2">
                   <div className="col-span-full sm:col-span-2">
+                    <h2>Submit Announcement</h2>
                     <label for="title" className="block text-sm font-medium text-gray-700">
                         Title
                     </label>
