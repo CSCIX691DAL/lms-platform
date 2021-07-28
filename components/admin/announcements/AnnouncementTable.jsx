@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -17,6 +17,18 @@ export const AnnouncementTable = () => {
     }
     fetchAnn();
   }, []);
+
+  const deleteDoc = (title) => {
+    firebase.firestore().collection("Announcements")
+      .where("title", "==", title).get()
+      .then(querySnapshot => {
+        querySnapshot.docs[0].ref.delete();
+        console.log("deleted");
+      })
+      .catch (error => {
+        console.log(error);
+      });
+  }
 
   return (
     <div className="mt-10 shadow overflow-hidden w-full border-b border-gray-200 sm:rounded-b-lg">
@@ -56,7 +68,6 @@ export const AnnouncementTable = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
-          {console.log(...ann)}
           {ann &&
             ann.map((announcement) => (
               <tr key={announcement.title}>
@@ -81,9 +92,7 @@ export const AnnouncementTable = () => {
                   </div>
                 </td>
                 <td className="px-4 py-4 whitespace-nowrap text-right text-sm font-medium">
-                  <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                    Delete
-                  </a>
+                  <button onClick={() => deleteDoc(announcement.title)} className="bg-white font-semibold text-indigo-600 hover:text-indigo-900">Delete</button>
                 </td>
               </tr>
             ))}
