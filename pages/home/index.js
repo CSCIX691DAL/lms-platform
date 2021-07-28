@@ -25,7 +25,7 @@ function Home() {
       <Nav email={AuthUser.email} signOut={AuthUser.signOut} />
 
       <main>
-        <ProfileDisplay />
+        <MainDisplay />
       </main>
     </div>
   );

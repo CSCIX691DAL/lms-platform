@@ -47,7 +47,7 @@ export const Nav = ({ email, signOut }) => {
       <nav className="flex justify-between bg-white w-full p-2 fixed h-16 shadow">
         <div className="my-auto ">
           <a className="p-4 font-bold text-xl">
-            <link rel="stylesheet" href="{home}" />
+            <link href="{home}" />
             LMS <span className="font-normal">Platform</span>
           </a>
         </div>
