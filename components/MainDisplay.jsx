@@ -30,17 +30,8 @@ export const MainDisplay = () => {
           </div>
         </div>
         <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 items-center shadow flex flex-col">
-          <div className="mainContentData w-full bg-white py-2 shadow-sm">
-            <h1 className="px-2 ">Course 1</h1>
-            <h2 className="px-2 font-bold text-lg">Course Material</h2>
-          </div>
           <div className="w-full px-5">
             <CourseDisplays></CourseDisplays>
-          </div>
-          <div>
-            <button className="bg-green-400 p-4 m-2">
-              <ReadFirestore></ReadFirestore>
-            </button>
           </div>
         </div>
       </div>

@@ -62,7 +62,7 @@ export const CourseDisplays = () => {
     }
   }, [router]);
 
-  if (module && !content) {
+  if (module && !content && contentList) {
     return (
       <List
         header={<b>{module}</b>}
@@ -74,7 +74,7 @@ export const CourseDisplays = () => {
     );
   }
 
-  if (module && content) {
+  if (module && content && courseData) {
     console.log(courseData);
     return (
       <>
@@ -105,5 +105,5 @@ export const CourseDisplays = () => {
     );
   }
 
-  return <h1>Welcome to LMS Platform</h1>;
+  return <h1>Welcome to LMS Platform Placeholder for Announcement</h1>;
 };
