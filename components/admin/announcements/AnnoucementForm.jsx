@@ -1,14 +1,20 @@
 
 
+//this portion was slightly unfinished due to time constraints
 export const AnnoucementForm = () => {
 
     return (
         <form action="#" method="POST">
-        <div className="w-full shadow sm:rounded-md sm:overflow-hidden">
+        <div className="min-w-full w-full shadow sm:rounded-md sm:overflow-hidden">
+        <p className=" mt-4 mx-auto text-2xl text-black">
+                Create a new Annoucement
+              </p>
+
             <div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-                <div className="grid grid-cols-3 gap-2">
+
+                <div className="grid grid-cols-3 gap-6">
+
                   <div className="col-span-full sm:col-span-2">
-                    <h2>Submit Announcement</h2>
                     <label for="title" className="block text-sm font-medium text-gray-700">
                         Title
                     </label>
@@ -20,9 +26,10 @@ export const AnnoucementForm = () => {
                         <label for="CourseCode" className="block text-sm font-medium text-gray-700">
                         Course Code
                         </label>
-                        <input type="text" name="CourseCode" id="CourseCode" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
-                        </input>
+                        
                     </div>
+                    <input type="text" name="CourseCode" id="CourseCode" className="focus:ring-indigo-500 focus:border-indigo-500 flex-1 block w-full rounded-none rounded-r-md sm:text-sm border-gray-300">
+                        </input>
                   <div>
                 <label for="announcementText" className="block text-sm font-medium text-gray-700">
                     Announcement
