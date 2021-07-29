@@ -2,7 +2,6 @@
 import firebase from "../../../initFirebase"
 import { Sidenav } from '../nav/Sidenav'
 import { AnnouncementTable } from './AnnouncementTable'
-import { AnnoucementForm } from './AnnoucementForm'
 
 firebase();
 
@@ -30,17 +29,8 @@ export const AnnouncementDisplay = ({ user }) => {
                 View or add new announcements below.
               </p>
               <AnnouncementTable />
-
             </div>
-
-
           </div>
-          <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12">      
-            <div className="mainContent overflow-auto col-span-10 h-full bg-gray-100 flex flex-col items-center">
-                <AnnoucementForm />
-              </div>
-          </div>
-        
         </section>
       </>
     )

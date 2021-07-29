@@ -24,9 +24,6 @@ function Admin() {
 
         <main>
           <AnnouncementDisplay user={AuthUser} />
-        
-
-              
         </main>
       </div>
     </>
