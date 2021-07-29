@@ -68,6 +68,7 @@ export const AnnouncementTable = () => {
           </tr>
         </thead>
         <tbody className="bg-white divide-y divide-gray-200">
+          {console.log(...ann)}
           {ann &&
             ann.map((announcement) => (
               <tr key={announcement.title}>
