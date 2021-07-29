@@ -8,7 +8,7 @@ firebase();
 
 export const MainDisplay = () => {
   return (
-    <section className="mainLayout h-screen bg-gray-100">
+    <section className="mainLayout h-screen bg-gray-100 pt-16">
       <div className="max-w-full h-full pb-4 ml-12 mr-12 grid grid-cols-12">
         <div className="col-span-2 h-full bg-gray-100 text-black">
           <div className="courseNav container mt-4 h-1/4">
@@ -38,9 +38,6 @@ export const MainDisplay = () => {
             <CourseDisplays></CourseDisplays>
           </div>
           <div>
-            <button className="bg-green-400 p-4 m-2">
-              <ReadFirestore></ReadFirestore>
-            </button>
           </div>
         </div>
       </div>
