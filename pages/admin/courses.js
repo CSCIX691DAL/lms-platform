@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Head from 'next/head';
 import { Topnav } from '../../components/admin/nav/Topnav';
-import { AdminCourseDisplay } from '../../components/admin/courses/AdminCourseDisplay';
+import { AdminCourseDisplay } from '../../components/admin/Courses/AdminCourseDisplay';
 import {
   useAuthUser,
   withAuthUser,
