@@ -36,14 +36,12 @@ export const getServerSideProps = withAuthUserTokenSSR()(
     const user = await getFirebaseAdmin().auth().getUserByEmail(AuthUser.email);
     if (user.email == 'lmsplatformcscix691@gmail.com') {
       if (user.customClaims && user.customClaims.admin == true) {
-        console.log('user is admin');
         return;
       }
       return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
         admin: true,
       });
     } else {
-      console.log('user is student');
       return getFirebaseAdmin().auth().setCustomUserClaims(user.uid, {
         student: true,
       });
