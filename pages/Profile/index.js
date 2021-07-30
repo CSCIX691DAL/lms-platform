@@ -10,7 +10,7 @@ import {
   AuthAction,
 } from 'next-firebase-auth';
 import { getFirebaseAdmin } from 'next-firebase-auth';
-import { ProfileDisplay } from '../../components/'
+import { ProfileDisplay } from '../../components/ProfileDisplay'
 
 function Home() {
   const AuthUser = useAuthUser();
