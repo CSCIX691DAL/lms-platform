@@ -8,9 +8,9 @@ import Button from '@material-ui/core/Button';
 import { useRouter } from 'next/router';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import { makeStyles } from '@material-ui/core/styles';;
 import Avatar from '@material-ui/core/Avatar';
+
 
 // This  Nav bar is referred to from https://dev.to/andrewespejo/how-to-design-a-simple-and-beautiful-navbar-using-nextjs-and-tailwindcss-26p1
 export const Nav = ({ email, signOut }) => {
@@ -28,6 +28,11 @@ export const Nav = ({ email, signOut }) => {
     },
   }));
 
+  const openProfile = (e) => {
+    e.preventDefault()
+    router.push(href)
+  }
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -41,6 +46,7 @@ export const Nav = ({ email, signOut }) => {
   const home = '/' + base + '/';
   const quiz = '/' + base + '/quiz';
   const assignment = '/' + base + '/assignment';
+  const profile = '/' + base + '/profile';
 
   return (
     <>
@@ -94,7 +100,7 @@ export const Nav = ({ email, signOut }) => {
               open={Boolean(anchorEl)}
               onClose={handleClose}
             >
-              <Link href="/profile">
+              <Link href="/profile" onClick={openProfile}>
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
               </Link>
               <MenuItem onClick={handleClose}>My account</MenuItem>
